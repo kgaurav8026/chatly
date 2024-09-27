@@ -1,18 +1,14 @@
 version: "3"
 services:
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+    image: kgaurav8026/chatly-cicd_backend:latest
     ports:
       - "5000:5000"
     networks:
       - app-network
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.frontend
+    image: kgaurav8026/chatly-cicd_frontend:latest
     ports:
       - "3000:3000"
     depends_on:
